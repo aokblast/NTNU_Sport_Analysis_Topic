@@ -31,9 +31,9 @@ def getSalary(num):
 def getPlayerID(name):
     return int((idDF.loc[idDF['PLAYERNAME']==name])['MLBID'])
 
-def getPlayerData(LIST,num):
+def getPlayerData(LIST):
     fig=plt.figure()
-    for i in range(num):
+    for i in range(len(LIST)):
         name=LIST[i]['Name']
         id=str(getPlayerID(name))
         name=name.replace(" ","-").lower()
@@ -60,9 +60,9 @@ def makePlot(DF):
     plt.show()
 
 if __name__=="__main__":
-    num=int(input("Please enter the number you want to show:"))
-    playerLIST=getSalary(num)
-    getPlayerData(playerLIST,num)
+    #num=int(input("Please enter the number you want to show:"))
+    playerLIST=getSalary(15)
+    getPlayerData(playerLIST)
     writetxt(playerLIST)
     playerDF=pd.DataFrame(playerLIST)
     print(playerDF)
