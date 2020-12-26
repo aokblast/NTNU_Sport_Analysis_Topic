@@ -3,13 +3,14 @@ from bs4 import BeautifulSoup as bs4
 import pandas as pd
 import matplotlib.pyplot as plt
 import csv
+import json
 
 idDF=pd.read_excel(r'./SFBB-Player-ID-Map.xlsx',engine='openpyxl')
 
 def writetxt(playerLIST):
     with open('output.txt',"w",newline='\n') as f:
         for i in playerLIST:
-            f.writeline(i)
+            f.write(json.dumps(i))
             
 def getContent(url):
     response=rq.get(url)
