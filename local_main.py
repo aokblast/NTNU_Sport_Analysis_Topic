@@ -10,7 +10,7 @@ idDF=pd.read_excel(r'./SFBB-Player-ID-Map.xlsx',engine='openpyxl')
 def writetxt(playerLIST):
     with open('output.txt',"w",newline='\n') as f:
         for i in playerLIST:
-            f.write(json.dumps(i))
+            f.write(json.dumps(i)+"<my_cutting_tag>")
             
 def getContent(url):
     response=rq.get(url)
