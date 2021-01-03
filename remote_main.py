@@ -22,7 +22,7 @@ def makePlot(DF):
         DF.pivot(values=i,columns='Name').plot(kind='bar',ax=axes[cnt//4,cnt%4],title=i,linewidth=5.0).legend_.remove()
         cnt+=1
     fig.legend(labels)
-    plt.show()
+    plt.savefig('output.png') 
 
 if __name__ == "__main__": 
     txt=readtxt("./output.txt")
