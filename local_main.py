@@ -61,7 +61,7 @@ def makePlot(DF):
 
 if __name__=="__main__":
     #num=int(input("Please enter the number you want to show:"))
-    playerLIST=getSalary(10)
+    playerLIST=getSalary(15)
     getPlayerData(playerLIST)
     writetxt(playerLIST)
     playerDF=pd.DataFrame(playerLIST)
